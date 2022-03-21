@@ -1,33 +1,38 @@
-<style>
-  @media print {
-    #printPageButton {
-      display: none !important;
-    }
-  }
-</style>
-
 <body class="g-sidenav-show bg-gray-100">
   <main class="main-content position-relative max-height-vh-100 h-100 mt-0 border-radius-lg">
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-success">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb" style="color: white">
-          <img src="./assets/img/logo_web.png" alt="" width="70px" height="auto">
-          <p class="mb-0">
-            สำนักงานเลขานุการคณะกรรมการโครงการพระราชดำริ
-            โครงการเฉลิมพระเกียรติ
-            และโครงการที่เกี่ยวเนื่องกับพระบรมวงศานุวงศ์ กรมควบคุมโรค
-          </p>
+          <div class="row">
+            <div class="col-1">
+              <img style="margin-top:10px" src="./assets/img/logo_web.png" alt="" width="70px" height="auto">
+            </div>
+            <div class="col-11">
+              <h3 style="margin-top:10px">SORDPC-DDC Daily Dashboard </h3>
+              <p class="mb-0">
+                สำนักงานเลขานุการคณะกรรมการโครงการพระราชดำริ
+                โครงการเฉลิมพระเกียรติ
+                และโครงการที่เกี่ยวเนื่องกับพระบรมวงศานุวงศ์ กรมควบคุมโรค
+              </p>
+            </div>
         </nav>
       </div>
     </nav>
     <!-- End Navbar -->
-
     <div class="container-fluid py-1">
       <div class="row mt-1 mb-2">
         <div class="col-12">
-          <div class="p-0 d-flex justify-content-end">
-            <button onclick="HTMLToPDF()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0" style="background-color: #009CEC;">Print PDF</button>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h6 style="margin-left:30px; margin-top:0px">ข้อมูล ณ วันที่ <?php echo date('d/m/Y')?></h6>
+        </div>
+        <div class="col">
+        <div class="p-0 d-flex justify-content-end">
+          <button onclick="HTMLToPDF()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0" style="background-color: #009CEC; ">Print PDF</button>
           </div>
         </div>
       </div>
@@ -43,7 +48,7 @@
                 <div class="col-md-8">
                   <form class="form-inline">
                     <label class="sr-only" for="datepicker1">กรุณาเลือกวันที่ :</label>
-                    <input onChange="filterDate(this.value)" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" type="tex" class="form-control form-control-sm mb-2 mr-sm-2" id="datepicker1" placeholder="วัน/เดือน/ปี">
+                    <input onChange="filterDate(this.value)" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" type="tex" class="form-control form-control-sm mb-2 mr-sm-2" id="datepicker1" placeholder="วัน/เดือน/ปี" >
                   </form>
                 </div>
               </div>
@@ -152,7 +157,10 @@
   <!-- jsPDF Custom Font -->
 
 
+
+
   <script>
+
     $(document).ready(function() {
       var pieGraph, barGraph1, barGraph2, barGraph3;
       var date = "";
@@ -515,7 +523,8 @@
     // filter date
     function filterDate(date) {
       pieGraph.destroy();
-      createChartPie(date)
+        createChartPie(date)
+    
     }
 
     function filterDate2(date) {
@@ -583,12 +592,14 @@
     };
 
     // diable keyboard input date
+
     $(function() {
+     
       $('#datepicker1').keypress(function(event) {
         event.preventDefault();
         return false;
       });
-      console.log("datepicker is disable!");
+      // console.log("datepicker is disable!");
 
       $('#datepicker2').keypress(function(event) {
         event.preventDefault();
@@ -605,5 +616,9 @@
         return false;
       });
     });
+
+
+    
+  
   </script>
 </body>
