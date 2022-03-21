@@ -32,7 +32,10 @@
         </div>
         <div class="col">
         <div class="p-0 d-flex justify-content-end">
-          <button onclick="HTMLToPDF()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0" style="background-color: #009CEC; ">Print PDF</button>
+          <!-- <button onclick="HTMLToPDF()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0" style="background-color: #009CEC; ">Print PDF</button> -->
+          <?php
+            echo "<input type='button' onclick='javascript:print()' value='สั่งปริ้น'>";
+          ?>
           </div>
         </div>
       </div>

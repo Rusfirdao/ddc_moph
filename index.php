@@ -13,23 +13,21 @@
     <link id="pagestyle" href="./assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 
 
-    <script language="javascript" type="text/javascript" src="./dist/jspdf.customfonts.debug.js"></script>
-    <script language="javascript" type="text/javascript" src="defaultVFS.js"></script>
-
 </head>
 
 <body>
-<div id="container">
+   
+    <div id="container">
         <!-- content -->
         <div id="html-template">
             <?php require_once __DIR__ . '/pages/dashboard.php'; ?>
         </div>
 
-      
+        <!-- button to download pdf -->
+        <!-- <div class="link-container">
+            <button class="btn-generate" onclick="HTMLToPDF()">Genrate PDF</button>
+        </div> -->
     </div>
-   
+
 </body>
-
-
-
 </html>
