@@ -55,52 +55,53 @@
         </div>
       </div>
       <div class="row mt-2">
+        <div class="col-lg-5 pb-2">
+          <div class="card h-100 z-index-2 ">
+            <!-- add bg-success for green bg -->
+            <div class="card-header pb-0 ">
+              <h6>ภาพรวมโครงการราชทัณฑ์ปันสุข (ประเภทกิจกรรม)</h6>
+            </div>
+            <div class="card-body p-3 pt-0 ">
+              <div class="row">
+                <div class="col-md-8">
+                  <form class="form-inline">
+                    <label class="sr-only" for="datepicker1">กรุณาเลือกวันที่ :</label>
+                  </form>
+                  <div class="form-group input-group-sm">
+                    <input onChange="filterDate(this.value)" name="date1" type="text" class="form-control datepicker1" id="date1" placeholder="ปี/เดือน/วัน" autocomplete="off" autofill="off">
+                  </div>
+                </div>
+              </div>
+              <div class="chartPie">
+                <canvas id="graphCanvasPie" class="chart-canvas" height="300" style="border-radius: .8rem;"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-lg-7 pb-2">
-          <div class="card h-100 z-index-2">
+          <div class="card h-100 z-index-2 ">
             <div class="card-header pb-0">
-              <h6>รถเก็บตัวอย่าง (สคร. จำนวนยอดตรวจทั้งหมด)</h6>
+              <h6>ภาพรวมโครงการราชทัณฑ์ปันสุข (จังหวัด)</h6>
             </div>
             <div class="card-body p-3 pt-0">
               <div class="row">
                 <div class="col-md-6">
                   <form class="form-inline">
-                    <label class="sr-only" for="datepicker2">กรุณาเลือกวันที่ :</label>
+                    <label class="sr-only" for="datepicker3">กรุณาเลือกวันที่ :</label>
                   </form>
                   <div class="form-group input-group-sm">
-                    <input onChange="filterDate2(this.value)" name="date2" type="text" class="form-control datepicker2" id="date2" placeholder="ปี/เดือน/วัน" autocomplete="off" autofill="off">
+                    <input onChange="filterDate3(this.value)" name="date3" type="text" class="form-control datepicker3" id="date3" placeholder="ปี/เดือน/วัน" autocomplete="off" autofill="off">
                   </div>
                 </div>
               </div>
-              <div class="chartBar1">
-                <canvas id="graphCanvasBar1" class="chartBarCanvas1" height="135"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5 pb-2">
-          <div class="card h-100 z-index-2">
-            <div class="card-header pb-0">
-              <h6>รถเก็บตัวอย่าง (จังหวัดที่จำนวนยอดตรวจทั้งหมด)</h6>
-            </div>
-            <div class="card-body p-3 pt-0">
-              <div class="row">
-                <div class="col-md-8">
-                  <form class="form-inline">
-                    <label>กรุณาเลือกวันที่ :</label>
-                  </form>
-                  <div class="form-group input-group-sm">
-                    <input onChange="filterDate4(this.value)" name="date4" type="text" class="form-control datepicker4" id="date4" placeholder="ปี/เดือน/วัน" autocomplete="off" autofill="off">
-                  </div>
-                </div>
-              </div>
-              <div class="chartBar3">
-                <canvas id="graphCanvasBar3" class="chartBarCanvas3" height="560" style="border-radius: .8rem;"></canvas>
+              <div class="chartBar2">
+                <canvas id="graphCanvasBar2" class="chartBarCanvas2" height="390"></canvas>
               </div>
             </div>
           </div>
         </div>
       </div>
-   
+     
       <!-- footer -->
       <footer class="footer pt-3">
         <div class="container-fluid">
@@ -149,7 +150,6 @@
 
 
   <script>
-
     $(document).ready(function() {
       var pieGraph, barGraph1, barGraph2, barGraph3;
       var date = "";
@@ -512,9 +512,8 @@
     }
 
     function filterDate2(date) {
-      // barGraph1.destroy();
-      // createChartBar1(date)
-      console.log(date.split('/').reverse().join('/'));
+      barGraph1.destroy();
+      createChartBar1(date)
     }
 
     function filterDate3(date) {

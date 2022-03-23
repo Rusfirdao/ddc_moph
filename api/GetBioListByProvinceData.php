@@ -3,6 +3,7 @@ $date = $_POST['date'];
 if ($date == null) {
     $date = "";
 }
+// $date=date_format($date,"Y/m/d");
 $curl = curl_init();
 curl_setopt_array($curl, array(
     CURLOPT_URL => "http://110.164.203.27/ddc_moph/api/v1/GetBioListByProvince?startDate={$date}",

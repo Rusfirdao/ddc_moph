@@ -2,9 +2,11 @@
 // echo json_encode($_POST['date']);
 // return
 $date = $_POST['date'];
+
 if ($date == null) {
     $date = "";
 }
+
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
