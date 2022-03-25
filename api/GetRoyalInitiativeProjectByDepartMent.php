@@ -2,14 +2,14 @@
 
 $date = $_POST['date'];
 
-if ($date == null) {
-    $date = "";
-}
+// if ($date == null) {
+//     $date = "";
+// }
 
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => "http://110.164.203.27/ddc_moph/api/v1/GetCorrectional?startDate={$date}",
+    CURLOPT_URL => "http://110.164.203.27/ddc_moph/api/v1/GetRoyalInitiativeProjectByDepartMent?dateInput={$date}",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING  => "",
     CURLOPT_MAXREDIRS => 10,

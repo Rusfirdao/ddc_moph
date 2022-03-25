@@ -13,7 +13,24 @@
     <link id="pagestyle" href="./assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integr />
+<style>
+    @media (max-width: 820px) {
+  .welcome-area  {
+    margin-left:15px;
+  }
+}
+@media (max-width: 540px) {
+  .welcome-area  {
+    margin-left:35px;
+  }
 
+}
+@media (max-width: 412px) {
+  .welcome-area  {
+    margin-left:45px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -26,8 +43,8 @@
                         <img style="margin-top:10px" src="./assets/img/logo_web.png" alt="" width="70px" height="auto">
                     </div>
                     <div class="col-11">
-                        <h3 style="margin-top:10px">SORDPC-DDC Daily Dashboard </h3>
-                        <p class="mb-0">
+                        <h3 style="margin-top:10px" class="welcome-area">SORDPC-DDC Daily Dashboard </h3>
+                        <p class="mb-0 welcome-area">
                             สำนักงานเลขานุการคณะกรรมการโครงการพระราชดำริ
                             โครงการเฉลิมพระเกียรติ
                             และโครงการที่เกี่ยวเนื่องกับพระบรมวงศานุวงศ์ กรมควบคุมโรค
@@ -300,7 +317,7 @@
         position: relative;
         z-index: 1;
         overflow: hidden;
-        min-height: 265px;
+        min-height: 200px;
         transition: 0.7s;
     }
 

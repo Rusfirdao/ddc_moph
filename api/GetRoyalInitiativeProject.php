@@ -9,7 +9,7 @@ if ($date == null) {
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => "http://110.164.203.27/ddc_moph/api/v1/GetCorrectional?startDate={$date}",
+    CURLOPT_URL => "http://110.164.203.27/ddc_moph/api/v1/GetRoyalInitiativeProject?dateInput={$date}",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING  => "",
     CURLOPT_MAXREDIRS => 10,
