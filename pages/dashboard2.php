@@ -86,7 +86,7 @@
                 <div class="col-md-8">
                   <form class="form-inline">
 
-                    <label class="sr-only" for="datepicker1">กรุณาเลือกวันที่ :</label>
+                    <label >กรุณาเลือกวันที่ :</label>
                   </form>
                   <div class="form-group input-group-sm">
                     <input onChange="filterDate1(this.value)" type="text" class="form-control datepicker1" placeholder="วัน/เดือน/ปี" autocomplete="off" autofill="off">
@@ -94,7 +94,7 @@
                 </div>
               </div>
               <div class="chartPie">
-                <canvas id="graphCanvasPie1" class="chart-canvas" height="300" style="border-radius: .8rem;"></canvas>
+                <canvas id="graphCanvasPie1" class="chart-canvas" height="500" style="border-radius: .8rem;"></canvas>
               </div>
             </div>
           </div>
@@ -264,7 +264,7 @@
               maintainAspectRatio: false,
               plugins: {
                 legend: {
-                  position: "right",
+                  position: "bottom",
                 },
               },
               interaction: {
