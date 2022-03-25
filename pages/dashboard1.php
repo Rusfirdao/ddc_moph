@@ -67,8 +67,10 @@
         </div>
         <div class="col">
           <div class="p-0 d-flex justify-content-end">
-            <button onclick="HTMLToPDF()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0" style="background-color: #009CEC; ">บันทึก</button>
-
+            <button onclick="capturePage()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0" style="background-color: #009CEC; ">บันทึก</button>
+            <FORM>
+                <INPUT style="margin-left:3px; " TYPE="button" value="กลับหน้าหลัก" class="btn-generate btn btn-light mb-0 " onClick="history.back()">
+              </FORM>
           </div>
         </div>
       </div>
@@ -158,15 +160,7 @@
   <script src="../node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.th.min.js"></script>
  <!--start export png -->
  <script src="../assets/js/html2canvas.min.js"></script>
-  <script>
-    function HTMLToPDF() {
-      html2canvas(document.querySelector("#capture")).then(canvas => {
-        var image = canvas.toDataURL("img/png").replace("image/png", "image/octet-stream");
-        console.log(image);
-        window.location.href = image;
-      });
-    }
-  </script>
+ <script src="../assets/js/capture.js"></script>
   <!--end export png -->
 
 

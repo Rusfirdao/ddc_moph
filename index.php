@@ -261,7 +261,7 @@
     <!-- jsPDF -->
     <script src="./node_modules/jspdf/dist/jspdf.umd.min.js"></script>
     <script type="text/javascript" src="./node_modules/html2canvas/dist/html2canvas.js"></script>
-    <script src="assets/js/convertPDF.js"></script>
+
     <!-- jsPDF Custom Font -->
 
 </body>

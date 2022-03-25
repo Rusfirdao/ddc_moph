@@ -44,8 +44,11 @@
           <div class="row">
             <div class="col-1">
               <img style="margin-top:10px" src="../assets/img/logo_web.png" alt="" width="70px" height="auto">
+              
             </div>
+            
             <div class="col-11">
+            
               <h3 style="margin-top:10px" class="welcome-area">SORDPC-DDC Daily Dashboard </h3>
               <p class="mb-0 welcome-area">
                 สำนักงานเลขานุการคณะกรรมการโครงการพระราชดำริ
@@ -63,14 +66,17 @@
         </div>
       </div>
       <div class="row">
+     
         <div class="col">
           <h4 style="margin-left:30px; margin-top:0px">โครงการพระราชดำริ</h4>
           <h6 style="margin-left:30px; margin-top:0px">ข้อมูล ณ วันที่ <?php echo date('d/m/Y') ?></h6>
         </div>
         <div class="col">
           <div class="p-0 d-flex justify-content-end">
-            <button onclick="HTMLToPDF()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0" style="background-color: #009CEC; ">บันทึก</button>
-
+            <button onclick="capturePage()" type="button" id="printPageButton" class="btn-generate btn btn-primary mb-0 " style="background-color: #009CEC; ">บันทึก</button>
+            <FORM>
+                <INPUT style="margin-left:3px; " TYPE="button" value="กลับหน้าหลัก" class="btn-generate btn btn-light mb-0 " onClick="history.back()">
+              </FORM>
           </div>
         </div>
       </div>
@@ -86,7 +92,7 @@
                 <div class="col-md-8">
                   <form class="form-inline">
 
-                    <label >กรุณาเลือกวันที่ :</label>
+                    <label>กรุณาเลือกวันที่ :</label>
                   </form>
                   <div class="form-group input-group-sm">
                     <input onChange="filterDate1(this.value)" type="text" class="form-control datepicker1" placeholder="วัน/เดือน/ปี" autocomplete="off" autofill="off">
@@ -94,7 +100,7 @@
                 </div>
               </div>
               <div class="chartPie">
-                <canvas id="graphCanvasPie1" class="chart-canvas" height="500" style="border-radius: .8rem;"></canvas>
+                <canvas id="graphCanvasPie1" class="chart-canvas" height="320" style="border-radius: .8rem;"></canvas>
               </div>
             </div>
           </div>
@@ -108,7 +114,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <form class="form-inline">
-                    <label >กรุณาเลือกวันที่ :</label>
+                    <label>กรุณาเลือกวันที่ :</label>
                   </form>
                   <div class="form-group input-group-sm">
                     <input onChange="filterDate2(this.value)" type="text" class="form-control datepicker2" placeholder="วัน/เดือน/ปี" autocomplete="off" autofill="off">
@@ -132,7 +138,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <form class="form-inline">
-                    <label >กรุณาเลือกวันที่ :</label>
+                    <label>กรุณาเลือกวันที่ :</label>
                   </form>
                   <div class="form-group input-group-sm">
                     <input onChange="filterDate3(this.value)" type="text" class="form-control datepicker3" placeholder="วัน/เดือน/ปี" autocomplete="off" autofill="off">
@@ -176,7 +182,7 @@
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-  
+
 
 
 
@@ -189,16 +195,8 @@
 
   <!--start export png -->
   <script src="../assets/js/html2canvas.min.js"></script>
-  <script>
-    function HTMLToPDF() {
-      html2canvas(document.querySelector("#capture")).then(canvas => {
-        var image = canvas.toDataURL("img/png").replace("image/png", "image/octet-stream");
-        console.log(image);
-        window.location.href = image;
-      });
-    }
-  </script>
-  <!--end export png -->
+  <script src="../assets/js/capture.js"></script>
+  <!-- end export png -->
 
 
   <script>
